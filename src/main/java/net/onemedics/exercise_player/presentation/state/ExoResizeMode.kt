@@ -1,4 +1,4 @@
-package net.onemedics.exercise_player.presentation.ui
+package net.onemedics.exercise_player.presentation.state
 
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi

@@ -30,5 +30,10 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.materialStyleLibraries)
+    implementation(libs.bundles.coroutineLibraries)
     implementation(libs.bundles.exoplayerLibraries)
+    implementation(libs.bundles.coilLibraries)
+    implementation(libs.jetbrains.kotlinx.serialization.json)
+    implementation(libs.gson)
 }
