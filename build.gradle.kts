@@ -3,10 +3,10 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("kotlinx-serialization")
     kotlin("kapt")
-    id ("net.onemedics.care.convention.appdefault")
-    id ("net.onemedics.care.convention.compose")
-    id ("net.onemedics.care.convention.hilt")
-    id ("net.onemedics.care.convention.buildConfig")
+    id("net.onemedics.care.convention.appdefault")
+    id("net.onemedics.care.convention.compose")
+    id("net.onemedics.care.convention.hilt")
+    id("net.onemedics.care.convention.buildConfig")
 }
 
 android {
@@ -19,24 +19,16 @@ android {
         testInstrumentationRunner = libs.versions.testInstrumentationRunner.get()
         consumerProguardFiles("consumer-rules.pro")
     }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
     kotlinOptions {
-       jvmTarget = libs.versions.javaVer.get()
+        jvmTarget = libs.versions.javaVer.get()
+        freeCompilerArgs += "-Xjvm-default=enable"
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
+
+    buildFeatures.compose = true
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.composeCompilerVersion.get()
 }
 
 dependencies {
-
-    implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.google.android.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.junit.test)
-    androidTestImplementation(libs.espresso.core)
-
     implementation(libs.bundles.exoplayerLibraries)
 }
