@@ -7,7 +7,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.database.DatabaseProvider
 
 @UnstableApi
-class CustomDatabaseProvider (context: Context) : SQLiteOpenHelper(
+internal class CustomDatabaseProvider (context: Context) : SQLiteOpenHelper(
     context, "exo_cache.db", null, DATABASE_VERSION
 ), DatabaseProvider {
 

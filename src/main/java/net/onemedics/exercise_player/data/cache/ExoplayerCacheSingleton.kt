@@ -8,7 +8,7 @@ import java.io.File
 
 
 @UnstableApi
-object ExoplayerCacheSingleton {
+internal object ExoplayerCacheSingleton {
     private var simpleCache: SimpleCache? = null
 
     fun getInstance(context: Context): SimpleCache {

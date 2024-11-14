@@ -36,4 +36,5 @@ dependencies {
     implementation(libs.bundles.coilLibraries)
     implementation(libs.jetbrains.kotlinx.serialization.json)
     implementation(libs.gson)
+    implementation(libs.arcify.indicator)
 }

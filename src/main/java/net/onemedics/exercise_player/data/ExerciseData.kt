@@ -1,6 +1,6 @@
 package net.onemedics.exercise_player.data
 
-data class ExerciseData(
+internal data class ExerciseData(
     val id: String,
     val exerciseCode: String,
     val exerciseName: String,

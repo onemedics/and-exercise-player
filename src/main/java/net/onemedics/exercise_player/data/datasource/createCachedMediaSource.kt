@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import net.onemedics.exercise_player.data.cache.ExoplayerCacheSingleton
 
 @OptIn(UnstableApi::class)
-fun createCachedMediaSource(context: Context, uri: String): ProgressiveMediaSource {
+internal fun createCachedMediaSource(context: Context, uri: String): ProgressiveMediaSource {
     val simpleCache = ExoplayerCacheSingleton.getInstance(context)
 
     val httpDataSourceFactory = DefaultHttpDataSource.Factory()

@@ -16,7 +16,7 @@ import net.onemedics.exercise_player.data.datasource.createCachedMediaSource
 import net.onemedics.exercise_player.data.network.createCloudFrontHeaders
 
 @OptIn(UnstableApi::class)
-fun<T> ExoPlayer.setMediaType(context: Context, url: T) {
+internal fun<T> ExoPlayer.setMediaType(context: Context, url: T) {
     when (url) {
         is String -> {
             if (url.isHlsUrl()) {

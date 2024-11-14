@@ -1,11 +1,12 @@
 package net.onemedics.exercise_player.presentation.ui
 
+
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import net.onemedics.exercise_player.data.ExerciseData
+import net.onemedics.exercise_player.presentation.composables.ExerciseBottomSheetScaffoldView
 import net.onemedics.exercise_player.presentation.composables.ExerciseExoVideoView
-import net.onemedics.exercise_player.presentation.extensions.fromJson
 import net.onemedics.exercise_player.presentation.viewmodel.MeilExerciseViewModel
 
 /**
@@ -21,12 +22,41 @@ import net.onemedics.exercise_player.presentation.viewmodel.MeilExerciseViewMode
  * - ExoPlayer를 사용하여 동영상 재생과 클리핑 기능을 처리합니다.
  */
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MeilExerciseScreen(
 //    exerciseJson: String,
     viewModel: MeilExerciseViewModel = hiltViewModel()
 ) {
-//    val mediaList = exerciseJson.fromJson<List<ExerciseData>>()
 
-    ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = true)
+    ExerciseBottomSheetScaffoldView(
+        topView = {
+            ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = false)
+        },
+        bottomView = {
+
+        }
+    )
+
+//    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+//        ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = false)
+//
+//        //프로그레스 인디케이터
+//        ArcifyCircleIndicator(
+//            modifier = Modifier.size(50.dp),
+//            progressState = ArcifyProgressState.Auto(),
+//            color = MaterialTheme.colorScheme.primary,
+//            backgroundColor = Color.Gray.copy(alpha = 0.2f),
+//            strokeCap = StrokeCap.Butt,
+//            animationSpec = tween(
+//                durationMillis = 2500,
+//                easing = LinearEasing
+//            )
+//        )
+//
+//        ExerciseControlView {
+//
+//        }
+//    }
 }
+

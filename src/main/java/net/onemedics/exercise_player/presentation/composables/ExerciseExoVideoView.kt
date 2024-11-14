@@ -21,12 +21,12 @@ import net.onemedics.exercise_player.presentation.state.ExoResizeMode
 
 @OptIn(UnstableApi::class)
 @Composable
-fun <T> ExerciseExoVideoView(
+internal fun <T> ExerciseExoVideoView(
     modifier: Modifier = Modifier,
     url: T,
     isPlaying: Boolean = false,
     videoResizeMode: ExoResizeMode = ExoResizeMode.Fit,
-    showControls: Boolean = true,
+    showControls: Boolean = false,
     isLooping: Boolean = false,
     onExoPlayerEvents: ExoPlayerEvents? = null
 ) {
