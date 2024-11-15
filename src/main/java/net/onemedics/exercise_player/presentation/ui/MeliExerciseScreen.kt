@@ -3,10 +3,10 @@ package net.onemedics.exercise_player.presentation.ui
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import net.onemedics.exercise_player.presentation.composables.ExerciseBottomSheetScaffoldView
-import net.onemedics.exercise_player.presentation.composables.ExerciseExoVideoView
+import net.onemedics.exercise_player.presentation.composables.OscillatingCircleAnimation
 import net.onemedics.exercise_player.presentation.viewmodel.MeilExerciseViewModel
 
 /**
@@ -29,14 +29,23 @@ fun MeilExerciseScreen(
     viewModel: MeilExerciseViewModel = hiltViewModel()
 ) {
 
-    ExerciseBottomSheetScaffoldView(
-        topView = {
-            ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = false)
-        },
-        bottomView = {
-
-        }
+    //숨쉬는 애니메이션
+    OscillatingCircleAnimation(
+        color = Color.Blue.copy(alpha = 0.2f),
+        size = 200.dp,
+        startSize = 50f,
+        endSize = 100f,
+        duration = 1000
     )
+
+//    ExerciseBottomSheetScaffoldView(
+//        topView = {
+//            ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = false)
+//        },
+//        bottomView = {
+//
+//        }
+//    )
 
 //    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 //        ExerciseExoVideoView(modifier = Modifier,"https://hls-test.onemedics.net/264_18/1_80BPM_sound_on_18.m3u8", isPlaying = true, isLooping = false)
